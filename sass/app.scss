@@ -1,0 +1,170 @@
+@import "compass";
+
+$blue: #338EFD;
+
+nav#locations-nav {
+
+	overflow: hidden;
+	clear: both;
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid #EEE;
+	margin-bottom: 20px;
+
+	a.tab {
+
+		@include border-top-radius( 5px );
+		margin: 10px 10px 0px 0px;
+		padding: 20px 30px;
+		padding: 15px 20px;
+		display: block;
+		text-decoration: none;
+		font-size: 22px;
+		font-weight: bold;
+		border: 1px solid #DDD;
+		max-width: 200px;
+		text-align: center;
+		float: left;
+		background-color: #FFF;
+		border-bottom: 0px;
+		color: #444;
+
+		&:hover {
+			background-color: lighten( $blue, 50% );
+			color: lighten( #444, 10% );
+		}
+
+
+		&.current {
+			@include box-shadow(3px 3px 10px -3px #000);
+			background-color: $blue;
+			color: #FFF;
+		}
+	}
+}
+div#locations_list tbody {
+
+	tr:hover {
+		background-color: #fff;
+		cursor: pointer;
+	}
+	td {
+		vertical-align: middle;
+	}
+	td.red {
+		background-color: red;
+		color: #FFF;
+	}
+}
+.col-1, .col-2 {
+	position: relative;
+	@include box-shadow( 0px 0px 8px -4px #666 );
+	@include border-radius( 5px );
+	float: left;
+	width: 35%;
+	border: 1px solid #EEE;
+	padding: 25px;
+
+	input[type=submit], #map_preview_button{
+		margin-top: 20px;
+	}
+
+
+}
+
+.col-2 {
+
+	margin-left: 10px;
+	padding: 0px;
+	display: table;
+
+
+	#map_preview {
+		display: table-cell;
+		height: 220px;
+		vertical-align: middle;
+		text-align: center;
+		color: #DDD;
+	}
+
+}
+div.edit-location {
+	display:none;
+	top: 152px;
+	right: 0px;
+	position: fixed;
+	width: 50%;
+	padding: 15px 30px;
+	background-color: #6195A8;
+
+	label {
+		// font-size: 16px;
+		text-transform: uppercase;
+		color: #fff;
+		// font-weight: bold;
+	}
+	div {
+		padding-top: 10px;
+		width: 33%;
+		float: left;
+	}
+	input[type=text] {
+		width: 93%;
+		font-size: 16px;
+	}
+	input.button{
+		margin: 10px;
+		float: right;
+	}
+	span.x {
+
+		color: #FFF;
+		padding:2px 6px;
+		border: 1px solid #EEE;
+		position: Absolute;
+		right: 16px;
+
+		&:hover {
+			background-color: #EEE;
+			color: #000;
+			cursor: pointer;
+		}
+	}
+	h2 {
+		color: #EEE;
+	}	
+
+
+}
+.dataTables_length {
+	margin-right: 20px;
+}
+.dataTables_length, .dataTables_filter {
+	float: left;
+}
+.dataTables_info {
+	// margin-top: 20px;
+	padding:10px;
+}
+#print_locations_paginate {
+	position: absolute;
+	bottom: 40px;
+	a {
+		background-color: $blue;
+		color: #FFF;
+		font-size: 16px;
+		padding: 5px 10px;
+		margin: 5px;
+		&:hover {
+			background-color: lighten( $blue, 10%);
+			cursor: pointer;
+		}
+	}
+}
+#loader {
+	position: absolute;
+	left: 50%;
+	margin-left: -10px;
+	top: 50%;
+}
+
